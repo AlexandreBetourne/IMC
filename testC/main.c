@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <math.h>
 
+void printIMC(int poids, float taille);
+
 int main(int argc, char *argv[]) {
     int poids = 0;
     float taille = 0;
@@ -18,6 +20,13 @@ int main(int argc, char *argv[]) {
     printf("Entrez votre taille. ");
     scanf("%f", &taille);
     
+    printIMC(poids, taille);
+    
+    return 0;
+}
+
+void printIMC(int poids, float taille)
+{
     float IMC = poids / pow(taille / 100.0, 2);
     
     if (IMC < 16)
@@ -42,8 +51,4 @@ int main(int argc, char *argv[]) {
     {
         printf("Obésité massive \n");
     }
-    
-    printf("Votre IMC %f" , IMC);
-    
-    return 0;
 }
